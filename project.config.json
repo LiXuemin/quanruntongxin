@@ -48,7 +48,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.19.4",
-  "appid": "wxbd8430342dcaa3f3",
+  "appid": "wx91355c62a9806481",
   "projectname": "miniprogram-1",
   "debugOptions": {
     "hidedInDevtools": []
@@ -59,6 +59,7 @@
     "servePath": ""
   },
   "isGameTourist": false,
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []
