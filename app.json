@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/list/list",
+    "pages/user/user",
+    "pages/logs/logs"
+  ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/list/list",
+      "text": "心愿单",
+      "iconPath": "images/Ar.png",
+      "selectedIconPath": "images/Ar_blue.png"
+    },
+  {
+    "pagePath": "pages/user/user",
+    "text": "我的",
+    "iconPath": "images/zl.png",
+    "selectedIconPath": "images/zl_blue.png"
+  }]
+  },
+  "window":{
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FAEEE7",
+    "navigationBarTitleText": "泉润童心",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
