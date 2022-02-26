@@ -1,0 +1,43 @@
+<form>
+	<view class="cu-form-group margin-top">
+		<view class="title">编号</view>
+		<view class="content">{{number}}</view>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">心愿</view>
+		<view class="content">{{wish}}</view>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">年龄</view>
+		<view class="content">{{age}}</view>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">性别</view>
+		<view class="content">{{gender}}</view>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">地址</view>
+		<view class="content">{{address}}</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">家庭情况</view>
+		<view class="content">{{familyIntro}}</view>
+	</view>
+</form>
+
+<view class="padding">
+	<view wx:if="{{status==1}}">
+		<button class="cu-btn block bg-green margin-tb-sm lg">
+    	<text class="cuIcon-evaluate iconfont-evaluate"></text> 我要认领</button>
+	</view>
+	<view wx:if="{{status==2}}">
+		<button class="cu-btn block bg-blue margin-tb-sm lg">
+    	<text class="cuIcon-like iconfont-like"></text> 已认领</button>
+	</view>
+	<view wx:if="{{status==3}}">
+		<button class="cu-btn block bg-red margin-tb-sm lg" loading> </button>
+		<button class="cu-btn block bg-red margin-tb-sm lg">
+    	<text class="cuIcon-likefill iconfont-spin"></text> 已完成</button>
+	</view>
+  
+</view>

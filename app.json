@@ -2,6 +2,7 @@
   "pages":[
     "pages/list/list",
     "pages/user/user",
+    "pages/wishcontent/wishcontent",
     "pages/logs/logs"
   ],
   "tabBar": {
