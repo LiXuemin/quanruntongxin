@@ -27,7 +27,7 @@
 
 <view class="padding">
 	<view wx:if="{{status==1}}">
-		<button class="cu-btn block bg-green margin-tb-sm lg">
+		<button class="cu-btn block bg-green margin-tb-sm lg" bindtap="showModal" data-target="DialogModal1">
     	<text class="cuIcon-evaluate iconfont-evaluate"></text> 我要认领</button>
 	</view>
 	<view wx:if="{{status==2}}">
@@ -39,5 +39,24 @@
 		<button class="cu-btn block bg-red margin-tb-sm lg">
     	<text class="cuIcon-likefill iconfont-spin"></text> 已完成</button>
 	</view>
-  
+	<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+		<view class="cu-dialog">
+			<view class="cu-bar bg-white justify-end">
+			<view class="content">心愿确认</view>
+			<view class="action" bindtap="hideModal">
+				<text class="cuIcon-close text-red"></text>
+			</view>
+			</view>
+			<view class="padding-xl">
+			 您确定要帮助我们的小朋友完成心愿-{{wish}}吗？
+			</view>
+			<view class="cu-bar bg-white justify-end">
+			<view class="action">
+				<button class="cu-btn line-green text-green" bindtap="cancelWish">取消</button>
+				<button class="cu-btn bg-green margin-left" data-id="{{_id}}" bindtap="confirmWish">确定</button>
+
+			</view>
+			</view>
+		</view>
+		</view>
 </view>

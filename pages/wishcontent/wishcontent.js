@@ -16,12 +16,33 @@ Page({
         wish: ''
 
     },
+    showModal(e) {
+        this.setData({
+            modalName: e.currentTarget.dataset.target
+        })
+    },
+    hideModal(e) {
+        this.setData({
+            modalName: null
+        })
+    },
+    confirmWish(e) {
+        console.log(e.target.dataset.id)
+        this.setData({
+            modalName: null
+        })
+    },
+    cancelWish(e) {
+        this.setData({
+            modalName: null
+        })
+    },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.log("跳转到详情页",options)
+        console.log("跳转到详情页", options)
         this.fetchWishData(options.wishId)
     },
 
@@ -77,24 +98,24 @@ Page({
     /**
      * 获取心愿详细数据
      * @param wishId 心愿id
-    */
+     */
     fetchWishData(wishId) {
         var self = this
         wx.cloud.database().collection('wish_list').doc(wishId).get({
-            success: function(res) {
-              // res.data 包含该记录的数据
-              console.log(res.data)
-              self.setData({
-                _id : res.data._id,
-                address : res.data.address,
-                age : res.data.age,
-                familyIntro : res.data.familyIntro,
-                gender : res.data.gender,
-                number : res.data.number,
-                status : res.data.status,
-                wish : res.data.wish
-              })
+            success: function (res) {
+                // res.data 包含该记录的数据
+                console.log(res.data)
+                self.setData({
+                    _id: res.data._id,
+                    address: res.data.address,
+                    age: res.data.age,
+                    familyIntro: res.data.familyIntro,
+                    gender: res.data.gender,
+                    number: res.data.number,
+                    status: res.data.status,
+                    wish: res.data.wish
+                })
             }
-          })
+        })
     }
 })
