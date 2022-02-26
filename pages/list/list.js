@@ -17,8 +17,6 @@ Page({
    */
   onLoad: function (options) {
     wx.cloud.init()
-    console.log("onload")
-    this.getData()
   },
 
   /**
@@ -32,7 +30,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log("onshow")
     this.getData()
+    console.log("onshow1")
   },
 
   /**
@@ -84,6 +84,7 @@ Page({
 
   //访问网络,请求数据  
   getData() {
+    console.log("getdata------")
     let that = this;
     //第一次加载数据
     if (currentPage == 1) {
