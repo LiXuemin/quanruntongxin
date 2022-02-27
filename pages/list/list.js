@@ -96,6 +96,8 @@ Page({
     wx.cloud.database().collection("wish_list")
       .skip(currentPage * pageSize) //从第几个数据开始
       .limit(pageSize)
+      .orderBy("status", "asc")
+      .orderBy("number", "asc")
       .get({
         success(res) {
           if (res.data && res.data.length > 0) {

@@ -1,5 +1,4 @@
 // pages/wishcontent/wishcontent.js
-
 Page({
 
     /**
@@ -26,8 +25,14 @@ Page({
             modalName: null
         })
     },
+    /**
+     * 点击确定，保存用户和心愿的关系
+     * 
+     */
     confirmWish(e) {
         console.log(e.target.dataset.id)
+        const app = getApp()
+        this.saveUserWishRelation(e.target.dataset.id, app.globalData.nickName)
         this.setData({
             modalName: null
         })
@@ -43,6 +48,7 @@ Page({
      */
     onLoad: function (options) {
         console.log("跳转到详情页", options)
+
         this.fetchWishData(options.wishId)
     },
 
@@ -116,6 +122,21 @@ Page({
                     wish: res.data.wish
                 })
             }
+        })
+    },
+    saveUserWishRelation(wishId, userNickName) {
+        wx.cloud.callFunction({
+            // 云函数名称
+            name: 'updateWishRelation',
+            // 传给云函数的参数
+            data: {
+                wishId: wishId,
+                nickName: userNickName,
+            },
+            success: function (res) {
+                console.log(res) // 3
+            },
+            fail: console.error
         })
     }
 })
