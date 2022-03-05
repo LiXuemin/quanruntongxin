@@ -9,7 +9,7 @@
     <view class="cu-item {{menuArrow?'arrow':''}}">
       <navigator class="content" hover-class="none" url="../wishcontent/wishcontent?wishId={{item._id}}" open-type="redirect">
         <text class="cuIcon-discoverfill text-orange"></text>
-        <text class="text-grey">{{item.number}}|{{item.wish}}</text>
+        <text class="text-grey">{{item.number}}-----{{item.wish}}</text>
       </navigator>
     </view>
 </view>
