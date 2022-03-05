@@ -125,6 +125,7 @@ Page({
         })
     },
     saveUserWishRelation(wishId, userNickName) {
+        let that = this
         wx.cloud.callFunction({
             // 云函数名称
             name: 'updateWishRelation',
@@ -135,6 +136,8 @@ Page({
             },
             success: function (res) {
                 console.log(res) // 3
+                let options = {wishId: wishId}
+                that.onLoad(options)
             },
             fail: console.error
         })
