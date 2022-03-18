@@ -8,10 +8,9 @@
         <mp-cell value="{{item.number}}" footer="{{item.wish}}"></mp-cell>
       </navigator>
     </view>
-  
   </view>
 </mp-cells>
-  <view class="loading" hidden="{{!loadMore}}">More...</view>
+  <!-- <view class="loading" hidden="{{!loadMore}}">More...</view> -->
   <view class="loading" hidden="{{!loadAll}}">已加载全部</view>
 </scroll-view>
 

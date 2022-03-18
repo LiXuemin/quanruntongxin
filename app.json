@@ -1,25 +1,30 @@
 {
-  "pages":[
+  "pages": [
     "pages/list/list",
     "pages/user/user",
     "pages/wishcontent/wishcontent",
     "pages/logs/logs"
   ],
   "tabBar": {
+    "color": "@tabBarColor",
+    "selectedColor": "@tabBarSelectedColor",
+    "borderStyle": "@tabBarBorderStyle",
+    "backgroundColor": "@tabBarBackgroundColor",
     "list": [{
-      "pagePath": "pages/list/list",
-      "text": "心愿单",
-      "iconPath": "images/Ar.png",
-      "selectedIconPath": "images/Ar_blue.png"
-    },
-  {
-    "pagePath": "pages/user/user",
-    "text": "我的",
-    "iconPath": "images/zl.png",
-    "selectedIconPath": "images/zl_blue.png"
-  }]
+        "pagePath": "pages/list/list",
+        "text": "心愿单",
+        "iconPath": "image/night mode.png",
+        "selectedIconPath": "image/night mode_green.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "image/user center.png",
+        "selectedIconPath": "image/user center_green.png"
+      }
+    ]
   },
-  "window":{
+  "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FAEEE7",
@@ -27,6 +32,8 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
+  "usingComponents": {},
+  "themeLocation": "weui.theme.json",
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
     "weui": true
