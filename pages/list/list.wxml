@@ -1,16 +1,15 @@
 <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
   <mp-cells ext-class="my-cells" title="心愿列表" footer="下拉加载更多">
-  <view wx:for="{{dataList}}" wx:key="item">
-    <view class="cu-item">
-      <navigator class="content" hover-class="none" url="../wishcontent/wishcontent?wishId={{item._id}}" open-type="redirect">
-        <!-- <text class="cuIcon-discoverfill text-orange"></text> -->
-        <!-- <text class="text-grey">{{item.number}}-----{{item.wish}}</text> -->
-        <mp-cell value="{{item.number}}" footer="{{item.wish}}"></mp-cell>
-      </navigator>
+    <view wx:for="{{dataList}}" wx:key="item">
+      <view class="cu-item">
+        <navigator class="content" hover-class="none" url="../wishcontent/wishcontent?wishId={{item._id}}" open-type="redirect">
+          <!-- <text class="cuIcon-discoverfill text-orange"></text> -->
+          <!-- <text class="text-grey">{{item.number}}-----{{item.wish}}</text> -->
+          <mp-cell value="{{item.number}}" footer="{{item.wish}}"></mp-cell>
+        </navigator>
+      </view>
     </view>
-  </view>
-</mp-cells>
+  </mp-cells>
   <!-- <view class="loading" hidden="{{!loadMore}}">More...</view> -->
   <view class="loading" hidden="{{!loadAll}}">已加载全部</view>
 </scroll-view>
-

@@ -1,5 +1,14 @@
-<form>
-	<view class="cu-form-group margin-top">
+	<view>
+	<mp-cells ext-class="my-cells" title="心愿详情">
+				<mp-cell value="编号" footer="{{number}}"></mp-cell>
+				<mp-cell value="心愿" footer="{{wish}}"></mp-cell>
+				<mp-cell value="年龄" footer="{{age}}"></mp-cell>
+				<mp-cell value="性别" footer="{{gender}}"></mp-cell>
+				<mp-cell value="地址" footer="{{address}}"></mp-cell>
+				<mp-cell value="家庭情况" footer="{{familyIntro}}"></mp-cell>
+	</mp-cells>
+</view>
+	<!-- <view class="cu-form-group margin-top">
 		<view class="title">编号</view>
 		<view class="content">{{number}}</view>
 	</view>
@@ -23,7 +32,6 @@
 		<view class="title">家庭情况</view>
 		<view class="content">{{familyIntro}}</view>
 	</view>
-</form>
 
 <view class="padding">
 	<view wx:if="{{status==1}}">
@@ -59,4 +67,4 @@
 			</view>
 		</view>
 		</view>
-</view>
+</view> -->
