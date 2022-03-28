@@ -5,6 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        dialogShow: false,
         _id: '',
         address: '',
         age: 0,
@@ -12,8 +13,21 @@ Page({
         gender: true,
         number: '',
         status: 0,
-        wish: ''
+        wish: '',
+        buttons: [{ text: '取消' }, { text: '确定' }]
 
+    },
+    openConfirm: function () {
+        this.setData({
+            dialogShow: true
+        })
+    },
+    //TODO 对话框完成事件绑定
+    tapDialogButton(e) {
+        this.setData({
+            dialogShow: false,
+            showOneButtonDialog: false
+        })
     },
     showModal(e) {
         this.setData({

@@ -1,14 +1,66 @@
+<view class="weui-panel weui-panel_access">
 	<view>
-	<mp-cells ext-class="my-cells" title="心愿详情">
-				<mp-cell value="编号" footer="{{number}}"></mp-cell>
-				<mp-cell value="心愿" footer="{{wish}}"></mp-cell>
-				<mp-cell value="年龄" footer="{{age}}"></mp-cell>
-				<mp-cell value="性别" footer="{{gender}}"></mp-cell>
-				<mp-cell value="地址" footer="{{address}}"></mp-cell>
-				<mp-cell value="家庭情况" footer="{{familyIntro}}"></mp-cell>
-	</mp-cells>
+		<mp-cells ext-class="my-cells" title="心愿详情">
+			<mp-cell value="编号" footer="{{number}}"></mp-cell>
+			<mp-cell value="心愿" footer="{{wish}}"></mp-cell>
+			<mp-cell value="年龄" footer="{{age}}岁"></mp-cell>
+			<mp-cell value="性别" footer="{{gender}}"></mp-cell>
+		</mp-cells>
+		<view class="weui-panel__bd">
+			<view class="weui-media-box weui-media-box_text">
+				<view class="weui-media-box__title weui-media-box__title_in-text">地址</view>
+				<view class="weui-media-box__desc">{{address}}</view>
+			</view>
+			<view class="weui-media-box weui-media-box_text">
+				<view class="weui-media-box__title weui-media-box__title_in-text">家庭情况</view>
+				<view class="weui-media-box__desc">{{familyIntro}}</view>
+			</view>
+		</view>
+	</view>
+	<view wx:if="{{status==1}}">
+		<button class="weui-btn weui-btn_primary" bindtap="openConfirm">
+			我要认领
+		</button>
+	</view>
+	<view wx:if="{{status==2}}">
+		<button class="weui-btn weui-btn_default">
+			已被认领
+		</button>
+	</view>
+	<view wx:if="{{status==3}}">
+		<button class="weui-btn weui-btn_default" disabled="true">
+			已完成
+		</button>
+	</view>
+	<mp-dialog title="心愿确认" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+		<view>您确定要帮助我们的小朋友完成心愿-{{wish}}吗？</view>
+	</mp-dialog>
+	<view class="padding">
+
+		<view class="cu-modal {{modalName=='DialogModal1'?'show':''}}">
+			<view class="cu-dialog">
+				<view class="cu-bar bg-white justify-end">
+					<view class="content">心愿确认</view>
+					<view class="action" bindtap="hideModal">
+						<text class="cuIcon-close text-red"></text>
+					</view>
+				</view>
+				<view class="padding-xl">
+					您确定要帮助我们的小朋友完成心愿-{{wish}}吗？
+				</view>
+				<view class="cu-bar bg-white justify-end">
+					<view class="action">
+						<button class="cu-btn line-green text-green" bindtap="cancelWish">取消</button>
+						<button class="cu-btn bg-green margin-left" data-id="{{_id}}" bindtap="confirmWish">确定</button>
+
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
 </view>
-	<!-- <view class="cu-form-group margin-top">
+
+<!-- <view class="cu-form-group margin-top">
 		<view class="title">编号</view>
 		<view class="content">{{number}}</view>
 	</view>
