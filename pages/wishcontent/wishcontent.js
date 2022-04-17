@@ -24,6 +24,11 @@ Page({
     },
     //TODO 对话框完成事件绑定
     tapDialogButton(e) {
+        const _btn = e.detail.item.text;
+        console.log(e);
+        if (_btn == '确定') {
+            this.confirmWish(e)
+        }
         this.setData({
             dialogShow: false,
             showOneButtonDialog: false
