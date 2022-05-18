@@ -1,3 +1,4 @@
+<!-- navigator.wxml -->
 <view class="weui-panel weui-panel_access">
 	<view>
 		<mp-cells ext-class="my-cells" title="心愿详情">

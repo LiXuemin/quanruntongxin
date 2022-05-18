@@ -14,8 +14,8 @@ Page({
         number: '',
         status: 0,
         wish: '',
-        buttons: [{ text: '取消' }, { text: '确定' }]
-
+        buttons: [{ text: '取消' }, { text: '确定' }],
+        canIUse: wx.canIUse('button.open-type.getUserInfo')
     },
     openConfirm: function () {
         this.setData({
@@ -67,9 +67,9 @@ Page({
      */
     onLoad: function (options) {
         console.log("跳转到详情页", options)
-
         this.fetchWishData(options.wishId)
     },
+    
 
     /**
      * 生命周期函数--监听页面初次渲染完成
