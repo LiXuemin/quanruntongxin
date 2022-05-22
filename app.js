@@ -8,7 +8,28 @@ App({
     wx.cloud.init({
       env: 'dev-8grcb747413937fe',
       traceUser: true
-    })
+    }),
+    wx.login({
+        success (res) {
+          if (res.code) {
+            console.log("登录成功！",res)
+            wx.cloud.callFunction({
+                // 云函数名称
+                name: 'getUserOpenId',
+                // 传给云函数的参数
+                data: {
+                   code: res.code
+                },
+                success: function (res) {
+                },
+                fail: console.error
+            })
+            
+          } else {
+            console.log('登录失败！' + res.errMsg)
+          }
+        }
+      })
   },
   _getUserInfo: function () {
     var userInfoStorage = wx.getStorageSync('user');
