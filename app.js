@@ -21,6 +21,7 @@ App({
                    code: res.code
                 },
                 success: function (res) {
+                    console.log("云函数获取",res)
                 },
                 fail: console.error
             })
