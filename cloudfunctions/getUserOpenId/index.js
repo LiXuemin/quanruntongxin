@@ -1,9 +1,10 @@
-'use strict';
 const cloud = require('wx-server-sdk')
 cloud.init({
     env: 'dev-8grcb747413937fe'
 })
 exports.main = (event, context, callback) => {
+    const wxContext = cloud.getWXContext()
+    console.log(wxContext)
     let code = event.code
     let appId = "wx91355c62a9806481"
     let appSecret = "f7e52c1d34b3ebdc2d1a4e1e02aaea43"
